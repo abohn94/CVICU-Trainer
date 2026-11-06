@@ -2308,11 +2308,12 @@ function SimHub(host, modId, onOpen) {
     const mm = MODULES.find(x => x.id === m);
     if (!modId) host.appendChild(h(`<h4 class="mt">${mm ? 'M' + mm.num + ' · ' + esc(mm.short || mm.title) : m}</h4>`));
     const grid = h('<div class="grid g2 simgrid"></div>'); host.appendChild(grid);
-    for (const s of list.filter(x => x.mod === m)) {
-      const r = SIMREC.get(s.id), p = s.patient || {};
+    /* on a module page, list every scenario SCEN.forMod returns, including ones shared from other modules (SCEN_ALSO) */
+    for (const s of (modId ? list : list.filter(x => x.mod === m))) {
+      const r = SIMREC.get(s.id), p = s.patient || {}, home = modId && s.mod !== modId ? MODULES.find(x => x.id === s.mod) : null;
       const c = h(`<div class="card simcard"><div class="row"><span class="chip">${stars(s.diff || 1)} ${DIFFL[Math.max(1, Math.min(5, s.diff || 1))]}</span><span class="chip">${s.mins || 240} min</span>${(s.groups || []).length ? '<span class="chip acc">variants</span>' : ''}<span class="sp"></span>${r.runs ? `<span class="chip ${tierCls(r.best)}">best ${r.best}% · ${esc(r.tier || '')}</span>` : '<span class="chip">new</span>'}</div>
         <h3 style="margin:6px 0 2px">${esc(s.title)}</h3><p class="sm mut m0">${s.tagline || ''}</p>
-        <div class="sm dim mt">${esc(p.name || '')} · ${esc(ptLine(p))}</div></div>`);
+        <div class="sm dim mt">${esc(p.name || '')} · ${esc(ptLine(p))}${home ? ` · <span class="acc">also in M${home.num} ${esc(home.short || home.title)}</span>` : ''}</div></div>`);
       c.onclick = () => onOpen(s); grid.appendChild(c);
     }
   }
