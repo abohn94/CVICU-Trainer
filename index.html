@@ -6605,6 +6605,13 @@ const CARDRX = (() => {
         ['Dabigatran', 'Thrombin time / aPTT', 'Idarucizumab', 'Dialyzable']])}</div>
       <div class="grid g2"><div class="card"><h4 class="m0">Antiplatelets and thrombolytics</h4><ul class="sm"><li><b>Aspirin:</b> chewed 162–325 mg at ACS onset; continued after CABG.</li><li><b>P2Y12 inhibitors</b> before CABG are usually stopped about: clopidogrel 5 days, ticagrelor 3 days, prasugrel 7 days (bleeding).</li><li><b>GP IIb/IIIa inhibitors</b> (eptifibatide, tirofiban): bleeding, thrombocytopenia.</li><li><b>Thrombolytics</b> (alteplase, tenecteplase): STEMI when PCI is not available within 120 min, massive PE, ischemic stroke. Absolute contraindications include prior intracranial hemorrhage, ischemic stroke within 3 months, active bleeding, suspected aortic dissection. After: neuro checks, bleeding, no new punctures.</li></ul></div>
       <div class="card"><h4 class="m0">Diuretics, beta-blockers, statins</h4><ul class="sm"><li><b>Loop</b> (furosemide, bumetanide): low K⁺, Mg²⁺, ototoxicity with fast IV doses. <b>Thiazide-type</b> (metolazone): added for resistance; low Na⁺ and K⁺. <b>Acetazolamide</b>: metabolic alkalosis from loops. <b>MRA</b> (spironolactone): high K⁺.</li><li><b>Beta-blocker after CABG</b>: started early (if no contraindication) to reduce post-op AF.</li><li><b>High-intensity statin</b> (atorvastatin 40–80 mg, rosuvastatin 20–40 mg) after ACS and CABG; myalgia, liver tests.</li></ul></div></div>
+      <div class="card"><h3>Calcium-channel blockers and lipid-lowering drugs</h3>${table(['Drug', 'Used for', 'Watch'], [
+        ['Diltiazem, verapamil (non-dihydropyridine)', 'AF/flutter rate control, SVT, angina; HCM (verapamil)', 'Bradycardia, AV block, hypotension; <b>avoid in HFrEF</b> and in WPW with AF'],
+        ['Amlodipine (dihydropyridine)', 'Hypertension, angina, radial-graft spasm prophylaxis', 'Ankle edema, flushing; safe in HFrEF'],
+        ['Nicardipine IV (dihydropyridine)', 'Hypertensive emergency, ICH/stroke BP control', 'Reflex tachycardia, hypotension, phlebitis'],
+        ['Nimodipine', 'Vasospasm prevention after subarachnoid hemorrhage', 'Hypotension; <b>never IV</b> (oral/NG only)'],
+        ['Statins; ezetimibe; PCSK9 inhibitors; bempedoic acid; icosapent ethyl', 'LDL and triglyceride lowering (see Heart Failure → Prevention, rehab & teaching)', 'Myalgia and liver tests (statins); injections (PCSK9)']])}
+      <p class="note">Our unit does not use clevidipine; nitroglycerin is the usual BP drip after cardiac surgery.</p></div>
       <div class="grid g2"><div class="card"><h4 class="m0">Pulmonary vasodilators</h4><ul class="sm"><li><b>Inhaled nitric oxide</b>: dilates pulmonary vessels in ventilated areas (better V/Q, lower PVR). Watch methemoglobin and NO₂; <b>never stop abruptly</b> (rebound pulmonary hypertension and RV failure).</li><li><b>Inhaled epoprostenol</b>: similar effect; continuous nebulizer; don’t interrupt.</li><li><b>Sildenafil</b> (oral/IV): systemic hypotension; not with nitrates.</li><li><b>Milrinone</b>: lowers PVR and SVR while increasing contractility (inodilator).</li></ul></div>
       <div class="card"><h4 class="m0">Drugs that control bleeding</h4><ul class="sm"><li><b>Protamine</b>: reverses heparin. Reactions: hypotension, anaphylactoid reaction, acute pulmonary hypertension; risk ↑ with fish allergy, prior NPH/protamine insulin, vasectomy. Give slowly.</li><li><b>Desmopressin (DDAVP)</b>: releases von Willebrand factor; helps platelet dysfunction (uremia, aspirin). Hyponatremia, hypotension.</li><li><b>Antifibrinolytics</b> (tranexamic acid, aminocaproic acid): reduce fibrinolysis after bypass; high-dose TXA can cause seizures.</li><li><b>Fibrinogen concentrate / cryoprecipitate</b> for low fibrinogen; <b>4-factor PCC</b> and <b>recombinant factor VIIa</b> for refractory bleeding (thrombosis risk).</li></ul></div></div>${pol}`;
   }
@@ -6615,9 +6622,81 @@ const CARDRX = (() => {
     { tag: 'Anticoagulants', q: 'Which anticoagulant raises the INR and can complicate the switch to warfarin in HIT?', o: ['Argatroban', 'Bivalirudin', 'Fondaparinux', 'Heparin'], a: 0, e: 'Argatroban falsely raises the INR; transition requires careful INR targets.' },
     { tag: 'Bleeding agents', q: 'During protamine administration, a patient suddenly develops hypotension and a rising PA pressure. The nurse should:', o: ['Stop the protamine and notify; support BP per order', 'Give it faster to finish', 'Give more heparin', 'Start nitroglycerin'], a: 0, e: 'Protamine reactions include hypotension, anaphylactoid reactions and acute pulmonary hypertension; slow administration lowers the risk.' },
     { tag: 'Pulmonary vasodilators', q: 'Why should inhaled nitric oxide never be stopped abruptly?', o: ['Rebound pulmonary hypertension and RV failure', 'It causes seizures', 'It lowers glucose', 'It causes bradycardia'], a: 0, e: 'Wean slowly per protocol; keep a backup delivery system during transport.' },
+    { tag: 'Calcium-channel blockers', q: 'Which calcium-channel blocker is a poor choice for AF rate control in a patient with an EF of 20%?', o: ['Diltiazem', 'None of them is a concern', 'Amlodipine for BP', 'Nimodipine'], a: 0, e: 'Non-dihydropyridines (diltiazem, verapamil) depress contractility and can worsen HFrEF; use a beta-blocker, amiodarone or digoxin per provider.' },
     { tag: 'Antiplatelets', q: 'A patient on ticagrelor needs non-urgent CABG. It is usually held for:', o: ['About 3 days', 'About 12 hours', '3 weeks', 'Not held'], a: 0, e: 'Typical holds: ticagrelor 3 days, clopidogrel 5 days, prasugrel 7 days, balancing bleeding against ischemic risk.' }
   ];
   return { tab, Q };
+})();
+
+/* ===== csc26.js ===== */
+/* =====================================================================
+   Additions for the CMC and CSC test plans effective Nov 19, 2026 (owner sent the PDFs Nov 5, 2026).
+   - CSX.complications → CABG tab "Surgical complications & graft care" (SAM, vasoplegia, air embolus, graft
+     failure, harvest sites, paralytic ileus, SIRS, post-perfusion cognition, chronic pain, thromboembolism)
+   - CSX.procedures → Valves module tab "Other cardiac procedures" (maze, surgical LAA closure, pericardial window,
+     LV aneurysm and post-MI VSD repair, TMVR, minimally invasive and off-pump surgery)
+   - CSX.prevention → Heart Failure module tab "Prevention, rehab & teaching" (dyslipidemia and drugs, metabolic
+     syndrome, cardiac rehabilitation, health-related social needs)
+   - CSX.scad → card added to the Cath lab tab (spontaneous coronary artery dissection)
+   Sources: Bojar, Manual of Perioperative Care in Adult Cardiac Surgery (6th ed.); 2018 AHA/ACC cholesterol
+   guideline + 2022 ACC ECDP on non-statin therapy; AHA/AACVPR cardiac rehabilitation statements; AHA 2018 SCAD
+   scientific statement; 2020 ACC/AHA valvular heart disease guideline; 2023 ACC/AHA/HRS AF guideline (surgical
+   LAA occlusion). Follow unit protocols.
+   ===================================================================== */
+const CSX = (() => {
+  const kv = (t, b) => `<div><b>${t}</b>${b}</div>`;
+  const pol = '<p class="note">Educational summary. Follow your unit’s protocols and the surgeon’s or provider’s orders.</p>';
+
+  function complications(host) {
+    host.innerHTML = `<div class="card"><h3>Surgical complications the CSC exam asks about</h3>${table(['Complication', 'Clues', 'What the team does / nursing'], [
+        ['<b>Systolic anterior motion (SAM)</b> of the mitral valve', 'After mitral repair or with a small, hyperdynamic LV (septal hypertrophy): hypotension that gets <b>worse with inotropes</b>, new systolic murmur, LVOT obstruction on echo', 'Treat like HOCM: <b>fluids</b>, stop or lower inotropes, beta-blocker, phenylephrine; avoid vasodilators. Echo confirms'],
+        ['<b>Vasoplegia</b>', 'Low MAP with normal or high cardiac output and low SVR soon after bypass; needs high-dose pressors', 'Norepinephrine, vasopressin; methylene blue or hydroxocobalamin in refractory cases per protocol; volume as needed'],
+        ['<b>Air embolus</b> (arterial)', 'Air entering the coronaries (often the RCA: <b>inferior ST elevation</b>, bradycardia, hypotension) or the brain (new neuro deficit, seizures)', 'Raise perfusion pressure, 100% O₂; coronary air usually clears with a higher MAP; cerebral air: hyperbaric O₂ may be considered'],
+        ['<b>Venous air embolus</b>', 'During central line insertion or <b>removal</b>, or a disconnected line: sudden dyspnea, hypoxia, hypotension, “mill-wheel” murmur', 'Clamp/cover the site, <b>left side down and head down</b> (Trendelenburg), 100% O₂, call for help. Prevent: remove lines supine or head-down with Valsalva or at end-expiration, occlusive dressing'],
+        ['<b>Graft failure</b>', 'New ischemia: ST changes in a grafted territory, new arrhythmias, low output, rising troponin out of proportion', '12-lead ECG, notify; echo; back to the cath lab or OR. Radial grafts can spasm'],
+        ['<b>Harvest-site problems</b>', 'Leg (saphenous vein): hematoma, drainage, cellulitis, edema, numbness. Arm (radial artery): hand ischemia, hematoma, numbness', 'Leg: elevate, compression per protocol, wound checks. Radial arm: hand color, cap refill, ulnar pulse; no BP cuffs or punctures on that arm per policy; spasm prophylaxis (nitroglycerin, then a calcium-channel blocker) per protocol'],
+        ['<b>Paralytic ileus</b>', 'Distension, nausea, vomiting, no flatus or stool, absent bowel sounds (POD 2–5); opioids, low K⁺/Mg²⁺, immobility, low flow', 'Opioid-sparing pain control, correct electrolytes, mobilize, NG decompression if vomiting; rule out mechanical obstruction and <b>bowel ischemia</b> (pain out of proportion, rising lactate)'],
+        ['<b>SIRS after bypass</b>', 'Fever, tachycardia, high WBC, vasodilation in the first 24–48 h without infection', 'Supportive; look for infection if it persists or appears later'],
+        ['<b>Post-perfusion cognitive impairment</b>', 'Memory, attention and processing problems for weeks to months after bypass; different from delirium', 'Screen, reassure, teach family; most improve; follow-up'],
+        ['<b>Chronic pain</b>', 'Persistent sternal, chest wall or harvest-site pain beyond 2–3 months', 'Multimodal pain plan, follow-up; screen for neuropathic pain'],
+        ['<b>Thrombus and embolus</b>', 'LV or LA thrombus (stroke, limb ischemia), DVT/PE after surgery', 'Neuro and limb checks, VTE prophylaxis, anticoagulation per order']])}
+      <div class="grid g2"><div class="pearl"><b>SAM vs pump failure:</b> both cause hypotension after mitral surgery, but SAM worsens with inotropes and improves with fluid and phenylephrine. Ask for an echo before escalating inotropes.</div><div class="pearl"><b>Central line removal:</b> supine or head-down, Valsalva (or end-expiration on the ventilator), firm pressure, airtight occlusive dressing, stay flat about 30 min per policy.</div></div>${pol}</div>`;
+  }
+
+  function procedures(host) {
+    host.innerHTML = `<div class="card"><h3>Other cardiac procedures on the CSC exam</h3>${table(['Procedure', 'What it is', 'Nursing focus after'], [
+        ['<b>Maze (Cox-maze, modified maze)</b>', 'Surgical lesions (cut-and-sew or cryo/radiofrequency) in the atria create a “maze” that blocks AF re-entry; often with mitral surgery', 'Early AF and flutter are common (rate/rhythm control, anticoagulation per surgeon); sinus node dysfunction and junctional rhythms → temporary pacing; fluid retention'],
+        ['<b>Surgical left atrial appendage closure</b>', 'The LA appendage is clipped, stapled or excised during surgery (often with a maze or valve operation) to lower stroke risk in AF', 'Bleeding; anticoagulation plan per surgeon (closure does not always replace anticoagulation)'],
+        ['<b>Pericardial window</b>', 'An opening from the pericardium into the pleura or abdomen (subxiphoid or thoracoscopic) to drain a recurrent effusion', 'Drain output, recurrence of tamponade signs, pleural effusion, pain'],
+        ['<b>LV aneurysm repair</b>', 'Resection or patch of a thin, scarred ventricular wall after a large MI', 'Low output, ventricular arrhythmias, LV thrombus (embolic risk)'],
+        ['<b>Post-MI VSD repair</b>', 'Patch closure of a ventricular septal rupture (days 3–5 after MI; new holosystolic murmur, shock, O₂ step-up on PA catheter)', 'Shock management (IABP/inotropes), residual shunt, RV failure, bleeding'],
+        ['<b>Transcatheter mitral valve replacement (TMVR)</b>', 'A valve placed in the mitral position by catheter (transseptal or transapical), often valve-in-valve or valve-in-ring', 'LVOT obstruction, tamponade, access bleeding, embolization, arrhythmias'],
+        ['<b>Off-pump CABG (OPCAB)</b>', 'Grafts sewn on the beating heart with stabilizers, no bypass machine', 'Less bleeding, AKI and vasoplegia; hypothermia and hemodynamic swings during surgery; same post-op care'],
+        ['<b>Minimally invasive surgery</b> (MIDCAB, robotic, mini-thoracotomy valve)', 'Smaller incisions, often no sternotomy; sometimes femoral bypass cannulation', 'Thoracotomy pain (splinting, atelectasis), pleural drains, groin site and limb checks, faster mobility']])}
+      <p class="sm">Endovascular and open aortic repair are covered in the Vascular module; TAVR and valve surgery in the cards and valve tabs here.</p>${pol}</div>`;
+  }
+
+  function prevention(host) {
+    host.innerHTML = `<div class="card"><h3>Dyslipidemia and metabolic syndrome</h3><div class="grid g2"><div><ul class="sm"><li><b>LDL cholesterol</b> drives atherosclerosis. After ACS, CABG or with known disease: <b>high-intensity statin</b>; common goals LDL &lt; 70 mg/dL, often &lt; 55 in very high risk (per provider).</li><li><b>Metabolic syndrome</b> = 3 or more of: abdominal obesity, high triglycerides, low HDL, high BP, high fasting glucose. Treat with weight loss, activity, diet and each risk factor.</li></ul></div>
+      <div>${table(['Drug', 'How it works', 'Watch'], [['Statins (atorvastatin, rosuvastatin)', 'Block cholesterol production in the liver', 'Muscle aches (CK if severe), liver tests, drug interactions'], ['Ezetimibe', 'Blocks cholesterol absorption in the gut', 'Well tolerated; added to a statin'], ['PCSK9 inhibitors (evolocumab, alirocumab, inclisiran)', 'More LDL receptors in the liver: large LDL drop', 'Injections every 2 weeks to 6 months; injection-site reactions'], ['Bempedoic acid', 'Lowers cholesterol production; option with statin intolerance', 'Gout, tendon rupture (rare)'], ['Icosapent ethyl', 'Purified omega-3 for high triglycerides', 'AF and bleeding risk slightly higher']])}</div></div></div>
+      <div class="grid g2"><div class="card"><h4 class="m0">Cardiac rehabilitation</h4><ul class="sm"><li>Supervised exercise, risk-factor management, education and psychosocial support. Lowers death and readmissions, yet many eligible patients are never referred.</li><li><b>Who:</b> after MI, CABG, PCI, valve surgery or TAVR, stable angina, HFrEF, heart transplant.</li><li><b>Refer before discharge</b>; start usually within weeks.</li><li><b>Phases:</b> inpatient (early mobility, teaching) → outpatient monitored program (often 36 sessions) → lifelong maintenance.</li><li>Hold or stop exercise for chest pain, unstable rhythm, drop in BP, severe dyspnea.</li></ul></div>
+      <div class="card"><h4 class="m0">Health-related social needs</h4><ul class="sm"><li>Screen for <b>food, housing, transportation, cost of medicines, utilities, safety</b> and support at home: they predict readmission as strongly as clinical factors.</li><li>Ask before discharge: “Will you be able to get and afford these medicines?” “Who will help you at home?”</li><li>Refer to social work and case management; use pharmacy assistance programs; arrange transportation for follow-up and rehab.</li><li>Use plain language, interpreters and <b>teach-back</b>; involve caregivers.</li></ul></div></div>${pol}`;
+  }
+
+  const scad = `<div class="card"><h3>Spontaneous coronary artery dissection (SCAD)</h3><div class="grid g2"><ul class="sm"><li>A tear or bleed inside the coronary artery wall that narrows the lumen: <b>not atherosclerosis</b>.</li><li>Typically <b>younger women</b> with few risk factors; around pregnancy or after delivery, after intense exercise or emotional stress; linked to fibromuscular dysplasia.</li><li>Presents as an ACS (STEMI or NSTEMI); diagnosed on angiography.</li></ul><ul class="sm"><li>Usually treated <b>conservatively</b>: most dissections heal. PCI is reserved for ongoing ischemia or instability (stenting can extend the tear).</li><li>Beta-blocker, antiplatelet therapy per cardiology; <b>no thrombolytics</b>.</li><li>Recurrence risk: teach symptoms, avoid extreme exertion, screen for fibromuscular dysplasia, cardiac rehab.</li></ul></div></div>`;
+
+  const Q = [
+    { tag: 'CSC complications', q: 'After mitral valve repair, BP falls further each time the epinephrine is increased. A new systolic murmur is heard. Suspect:', o: ['Systolic anterior motion (SAM) with LVOT obstruction', 'Vasoplegia', 'Cardiac tamponade', 'Graft failure'], a: 0, e: 'Inotropes worsen SAM. Treatment: fluids, stop inotropes, beta-blocker, phenylephrine; confirm with echo.' },
+    { tag: 'CSC complications', q: 'During removal of an internal jugular central line, the patient suddenly becomes dyspneic and hypotensive. First actions?', o: ['Cover the site, place the patient left side down and head down, give 100% O₂, call for help', 'Sit the patient upright', 'Give a fluid bolus and observe', 'Reinsert the line'], a: 0, e: 'Venous air embolism: positioning traps air in the right heart away from the outflow; prevent with supine/head-down removal, Valsalva and an occlusive dressing.' },
+    { tag: 'CSC complications', q: 'Shortly after CABG, inferior ST elevation and bradycardia appear and resolve as the MAP is raised. The likely cause was:', o: ['Air in the right coronary (or its graft)', 'Pericarditis', 'Hyperkalemia', 'Vasoplegia'], a: 0, e: 'Air bubbles often go to the anteriorly placed RCA; a higher perfusion pressure pushes them through.' },
+    { tag: 'CSC complications', q: 'After a radial artery harvest, which order would the nurse question?', o: ['BP cuff on the harvest arm', 'Hand perfusion checks', 'Calcium-channel blocker for spasm prophylaxis', 'Elevating the arm'], a: 0, e: 'Protect the harvest arm: no BP cuffs or punctures per policy; check hand color, warmth, cap refill and ulnar flow.' },
+    { tag: 'CSC procedures', q: 'After a Cox-maze procedure, which rhythm problems are expected early?', o: ['Atrial arrhythmias and sinus node dysfunction needing temporary pacing', 'Only ventricular tachycardia', 'None: the maze cures AF immediately', 'Complete heart block in every patient'], a: 0, e: 'Early AF/flutter and slow junctional or sinus rhythms are common while the lesions heal.' },
+    { tag: 'CSC procedures', q: 'Four days after a large anterior MI, a patient develops a new loud holosystolic murmur, shock, and a step-up in O₂ saturation from RA to PA. This is:', o: ['Ventricular septal rupture', 'Papillary muscle rupture with no shunt', 'Pericarditis', 'Right ventricular infarction'], a: 0, e: 'The left-to-right shunt raises PA saturation. IABP, inotropes and urgent surgical repair.' },
+    { tag: 'CMC prevention', q: 'Which patient group benefits from cardiac rehabilitation referral before discharge?', o: ['After MI, CABG, PCI, valve surgery, or with stable HFrEF', 'Only patients under 50', 'Only after heart transplant', 'Only patients who request it'], a: 0, e: 'Cardiac rehab lowers mortality and readmission; referral is a quality measure for these groups.' },
+    { tag: 'CMC prevention', q: 'A patient with heart failure says he can’t afford his new medicines. The best nursing action is:', o: ['Involve social work/case management and pharmacy assistance before discharge', 'Tell him to take them every other day', 'Document non-adherence', 'Remove the medicines from the list'], a: 0, e: 'Health-related social needs (cost, transport, food, housing) are testable nursing actions and strong predictors of readmission.' },
+    { tag: 'CMC conditions', q: 'A 38-year-old woman 3 weeks postpartum has an NSTEMI. Angiography shows a long smooth narrowing of the LAD without plaque. Typical management?', o: ['Conservative: beta-blocker and antiplatelet, avoid stenting unless ongoing ischemia', 'Thrombolytics', 'Immediate stenting of every segment', 'CABG in all cases'], a: 0, e: 'SCAD usually heals; PCI can extend the dissection. Thrombolytics are avoided.' }
+  ];
+  return { complications, procedures, prevention, scad, Q };
 })();
 
 /* ===== m1.js ===== */
@@ -7994,6 +8073,7 @@ const CARDRX = (() => {
     { tag: 'HOCM', q: 'A patient with HOCM becomes hypotensive after a diuretic and nitroglycerin. What is the BEST treatment?', o: ['IV fluid and phenylephrine', 'Dobutamine', 'Milrinone', 'More nitroglycerin'], a: 0, e: 'Increase preload and afterload; avoid inotropes and vasodilators.' },
     { tag: 'Constriction', q: 'Which finding favors constrictive pericarditis over cardiac tamponade?', o: ['Prominent y descent and Kussmaul sign', 'Absent y descent', 'Pulsus paradoxus only', 'Pericardial effusion on echo'], a: 0, e: 'Tamponade lacks a y descent; constriction has rapid x and y descents and Kussmaul sign.' },
   ];
+  Q.push(...CSX.Q.filter(q => q.tag === 'CSC procedures'));
   addQ(ID, Q);
 
   const OV = { why: 'Valve and structural heart patients arrive with physiology that the operation has just changed. Knowing the lesion explains the post-op priorities: preload and rhythm after aortic stenosis, afterload after mitral regurgitation, heart block after work near the conduction system, and anticoagulation for mechanical valves.',
@@ -8012,6 +8092,7 @@ const CARDRX = (() => {
         { id: 'ov', label: 'Overview', render: ovTab(OV) },
         { id: 'c', label: 'Disease & surgery cards', render: tabCards },
         { id: 'v', label: 'Valves & anticoagulation', render: tabValves },
+        { id: 'op', label: 'Other cardiac procedures', render: CSX.procedures },
         { id: 'q', label: 'Profile matcher & quiz', render: b => quizPane(b, ID, Q) }
       ]);
     }
@@ -9403,7 +9484,7 @@ const CARDRX = (() => {
     { tag: 'Physiology', q: 'Rewarming after CPB typically causes:', o: ['Vasodilation (↓SVR) as vasoconstriction resolves', 'Immediate vasoconstriction', 'Reduced O₂ consumption', 'Decreased cardiac output'], a: 0, e: 'Vasodilation with rewarming can unmask hypovolemia; later shivering/awakening raises SVR.' },
     { tag: 'Physiology', q: 'Which electrolyte targets reduce post-op arrhythmias?', o: ['K 4.0–5.0 and Mg >2.0', 'K 3.0 and Mg 1.0', 'High calcium only', 'Sodium >150'], a: 0, e: 'Keep K and Mg replete to reduce AF/VT.' }
   ];
-  Q.push(...CABGX.Q);
+  Q.push(...CABGX.Q, ...CSX.Q.filter(q => q.tag === 'CSC complications'));
   addQ(ID, Q);
 
   const OV = { why: 'Fresh CABG admissions are the heart of CVICU nursing. The first 24 hours decide most outcomes: bleeding, tamponade, vasoplegia, low output, graft failure and arrhythmias all show up here, and the nurse is usually first to see them.',
@@ -9431,6 +9512,7 @@ const CARDRX = (() => {
         { id: 'ps', label: 'Pain, sedation & delirium', render: CABGX.pain },
         { id: 'pb', label: 'Post-op care bundles', render: CABGX.bundles },
         { id: 'ct', label: 'Chest tubes & breathing', render: CABGX.chest },
+        { id: 'sc', label: 'Surgical complications & graft care', render: CSX.complications },
         { id: 'r', label: 'Reference', render: tabRef },
         { id: 'q', label: 'Quiz', render: b => quizPane(b, ID, Q) }
       ]);
@@ -13423,7 +13505,7 @@ const HANDOUTS = [
         ['Dual antiplatelet therapy (DAPT)', 'Aspirin + a P2Y12 inhibitor: clopidogrel, ticagrelor, prasugrel', 'Usually 6–12 months after a stent (shorter if high bleeding risk). <b>Stopping early can cause stent thrombosis</b>: teach not to stop without the cardiologist. Prasugrel is avoided after prior stroke/TIA; ticagrelor can cause dyspnea'],
         ['Procedural anticoagulants', 'Unfractionated heparin (ACT-guided), bivalirudin', 'Sheath removal timed to ACT per protocol'],
         ['GP IIb/IIIa inhibitors', 'Eptifibatide, tirofiban', 'Bleeding and thrombocytopenia: check platelets; dose adjust for kidney function'],
-        ['Cangrelor (IV P2Y12)', 'Short-acting IV', 'Used when oral drugs can’t be given; bridging before surgery']])}${pol}</div>`;
+        ['Cangrelor (IV P2Y12)', 'Short-acting IV', 'Used when oral drugs can’t be given; bridging before surgery']])}${pol}</div>` + CSX.scad;
   }
 
   function tabStructural(host) {
@@ -13484,6 +13566,7 @@ const HANDOUTS = [
     { tag: 'Syncope', q: 'Which syncope history is most worrying for a cardiac cause?', o: ['Collapse without warning while jogging', 'Fainting while having blood drawn', 'Light-headed after standing quickly', 'Fainting after a long church service in a hot room'], a: 0, e: 'Exertional syncope without prodrome suggests aortic stenosis, hypertrophic cardiomyopathy or an arrhythmia.' },
     { tag: 'Vascular', q: 'A patient with AF suddenly has a cold, pale, painful leg with no pulses and new numbness. Priority actions?', o: ['Notify immediately, heparin per order, keep the limb level, prepare for revascularization', 'Elevate the leg and apply heat', 'Massage the calf', 'Recheck in 4 hours'], a: 0, e: 'Sensory loss means a threatened limb: time to reperfusion matters. Never elevate or heat an ischemic limb.' }
   ];
+  Q.push(...CSX.Q.filter(q => q.tag === 'CMC conditions'));
   addQ(ID, Q);
 
   registerModule({
@@ -13603,6 +13686,7 @@ const HANDOUTS = [
     { tag: 'Comorbidities', q: 'Which order is correct for a malnourished patient in alcohol withdrawal with low glucose?', o: ['Thiamine before glucose', 'Glucose before thiamine', 'Neither', 'Insulin first'], a: 0, e: 'Glucose without thiamine can precipitate Wernicke encephalopathy.' },
     { tag: 'Palliative', q: 'A patient with end-stage HF and an ICD chooses comfort care. What should the nurse raise with the team?', o: ['Deactivating ICD shock therapy', 'Removing the ICD surgically', 'Increasing the shock energy', 'Nothing: the ICD must stay active'], a: 0, e: 'Shocks near death cause distress without benefit. Shock therapy can be turned off with consent; pacing can remain.' }
   ];
+  Q.push(...CSX.Q.filter(q => q.tag === 'CMC prevention'));
   addQ(ID, Q);
 
   registerModule({
@@ -13615,6 +13699,7 @@ const HANDOUTS = [
         { id: 'hf', label: 'Heart failure', render: tabHF },
         { id: 'cm', label: 'Cardiomyopathy, infection & pericardium', render: tabCM },
         { id: 'co', label: 'Comorbidities', render: tabComorb },
+        { id: 'pr', label: 'Prevention, rehab & teaching', render: CSX.prevention },
         { id: 'p', label: 'Palliative & end of life', render: tabPal },
         { id: 'q', label: 'Quiz', render: b => quizPane(b, ID, Q) }
       ]);
