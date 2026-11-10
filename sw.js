@@ -3,8 +3,8 @@
    - Everything else (icons, handout PDFs and page images) is served from the saved copy and refreshed in the
      background when online.
    - The page can ask it to save every handout ahead of time ({type:'cacheAll', urls}).
-   Version: 20261109205941 (stamped by deploy.sh) */
-const CACHE = 'cvicu-20261109205941';
+   Version: 20261110081136 (stamped by deploy.sh) */
+const CACHE = 'cvicu-20261110081136';
 const CORE = ['./', 'index.html', 'manifest.webmanifest', 'icon-192.png', 'icon-512.png', 'apple-touch-icon.png', 'favicon-32.png'];
 self.addEventListener('install', e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(CORE)).then(() => self.skipWaiting())); });
 self.addEventListener('activate', e => {
