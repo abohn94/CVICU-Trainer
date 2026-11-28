@@ -3,15 +3,15 @@
    - Everything else (icons, handout PDFs and page images) is served from the saved copy and refreshed in the
      background when online.
    - The page can ask it to save every handout ahead of time ({type:'cacheAll', urls}).
-   Version: 20261127104919 (stamped by deploy.sh) */
-const CACHE = 'cvicu-20261127104919';
+   Version: 20261127181220 (stamped by deploy.sh) */
+const CACHE = 'cvicu-20261127181220';
 const CORE = ['./', 'index.html', 'manifest.webmanifest', 'icon-192.png', 'icon-512.png', 'apple-touch-icon.png', 'favicon-32.png'];
 self.addEventListener('install', e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(CORE)).then(() => self.skipWaiting())); });
 self.addEventListener('activate', e => {
   e.waitUntil((async () => {
     const keep = await caches.open(CACHE);
     for (const k of await caches.keys()) {
-      if (k === CACHE || !k.startsWith('cvicu-')) continue;
+      if (k === CACHE || k === 'cvicu-brief' || !k.startsWith('cvicu-')) continue;   // cvicu-brief = briefings saved for offline (page-managed)
       /* carry saved handouts over to the new version so offline copies survive app updates */
       const old = await caches.open(k);
       for (const req of await old.keys()) { if (!(await keep.match(req))) { const r = await old.match(req); if (r) await keep.put(req, r); } }
@@ -24,6 +24,7 @@ const isPage = req => req.mode === 'navigate' || (req.headers.get('accept') || '
 self.addEventListener('fetch', e => {
   const req = e.request; if (req.method !== 'GET') return;
   const url = new URL(req.url); if (url.origin !== location.origin) return;
+  if (url.pathname.includes('/briefings/') || req.headers.has('range')) return;   // audio: let the browser stream it (range requests; iOS needs 206)
   if (isPage(req)) {
     e.respondWith((async () => {
       try {
